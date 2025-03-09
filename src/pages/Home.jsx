@@ -5,8 +5,8 @@ function Home() {
     <div className="home-page">
       <section className="hero">
         <div className="hero-content">
-          <h1>Welcome to ShopMock</h1>
-          <p>Your one-stop shop for all your mock shopping needs</p>
+          <h1>Buy Whatever You Want</h1>
+          <p>Your one-stop shop for all your shopping needs</p>
           <Link to="/shop" className="cta-button">
             Shop Now
           </Link>

@@ -8,7 +8,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <Link to="/">ShopMock</Link>
+        <Link to="/">not walmart</Link>
       </div>
       <ul className="navbar-links">
         <li>
