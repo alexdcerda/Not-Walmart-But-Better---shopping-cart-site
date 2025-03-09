@@ -11,8 +11,8 @@ const mockEmptyCart = {
 
 const mockFilledCart = {
   cartItems: [
-    { id: 1, name: 'Test Product 1', price: 10.99, quantity: 1 },
-    { id: 2, name: 'Test Product 2', price: 20.99, quantity: 2 }
+    { id: 1, title: 'Test Product 1', price: 10.99, quantity: 1 },
+    { id: 2, title: 'Test Product 2', price: 20.99, quantity: 2 }
   ],
   getTotalPrice: () => 52.97 // 10.99 + (20.99 * 2)
 };
@@ -34,7 +34,7 @@ describe('Cart Component', () => {
     expect(screen.getByText('Your cart is empty')).toBeInTheDocument();
     
     // Check that the checkout button is not displayed
-    expect(screen.queryByText('Checkout')).not.toBeInTheDocument();
+    expect(screen.queryByText('Proceed to Checkout')).not.toBeInTheDocument();
   });
   
   it('displays cart items and total when cart has items', () => {
@@ -48,6 +48,6 @@ describe('Cart Component', () => {
     expect(screen.getByText('$52.97')).toBeInTheDocument();
     
     // Check if the checkout button is displayed
-    expect(screen.getByText('Checkout')).toBeInTheDocument();
+    expect(screen.getByText('Proceed to Checkout')).toBeInTheDocument();
   });
 }); 

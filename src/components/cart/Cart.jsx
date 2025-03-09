@@ -6,6 +6,12 @@ function Cart() {
   // We'll implement the CartContext later, for now we'll use a placeholder
   const { cartItems = [], getTotalPrice = () => 0 } = useContext(CartContext) || {};
   
+  const handleCheckout = () => {
+    // This would typically handle the checkout process
+    // For now, we'll just show an alert
+    alert('Checkout functionality would be implemented here!');
+  };
+  
   return (
     <div className="cart">
       <h2>Your Cart</h2>
@@ -25,8 +31,11 @@ function Cart() {
               <span>Total:</span>
               <span>${getTotalPrice().toFixed(2)}</span>
             </div>
-            <button className="checkout-button">
-              Checkout
+            <button 
+              className="checkout-button"
+              onClick={handleCheckout}
+            >
+              Proceed to Checkout
             </button>
           </div>
         </>

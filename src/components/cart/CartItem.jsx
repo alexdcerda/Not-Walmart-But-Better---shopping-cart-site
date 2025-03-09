@@ -12,14 +12,14 @@ function CartItem({ item }) {
     <div className="cart-item">
       <div className="cart-item-image">
         {item.image ? (
-          <img src={item.image} alt={item.name} />
+          <img src={item.image} alt={item.title} />
         ) : (
           <div className="image-placeholder"></div>
         )}
       </div>
       
       <div className="cart-item-details">
-        <h3>{item.name}</h3>
+        <h3>{item.title}</h3>
         <p className="cart-item-price">${item.price.toFixed(2)}</p>
       </div>
       

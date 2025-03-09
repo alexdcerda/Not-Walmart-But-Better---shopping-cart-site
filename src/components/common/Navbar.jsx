@@ -3,8 +3,7 @@ import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 
 function Navbar() {
-  // We'll implement the CartContext later, for now we'll use a placeholder
-  const { cartItems = [] } = useContext(CartContext) || {};
+  const { getTotalItems = () => 0 } = useContext(CartContext) || {};
   
   return (
     <nav className="navbar">
@@ -21,7 +20,7 @@ function Navbar() {
       </ul>
       <div className="navbar-cart">
         <Link to="/shop" className="cart-icon">
-          🛒 <span className="cart-count">{cartItems.length}</span>
+          🛒 <span className="cart-count">{getTotalItems()}</span>
         </Link>
       </div>
     </nav>

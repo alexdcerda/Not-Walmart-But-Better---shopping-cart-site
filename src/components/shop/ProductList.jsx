@@ -1,16 +1,41 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ProductCard from './ProductCard';
 
 function ProductList() {
-  // Mock product data - in a real app, this would come from an API or context
-  const [products] = useState([
-    { id: 1, name: 'Product 1', price: 19.99, image: '' },
-    { id: 2, name: 'Product 2', price: 24.99, image: '' },
-    { id: 3, name: 'Product 3', price: 14.99, image: '' },
-    { id: 4, name: 'Product 4', price: 34.99, image: '' },
-    { id: 5, name: 'Product 5', price: 9.99, image: '' },
-    { id: 6, name: 'Product 6', price: 29.99, image: '' },
-  ]);
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch('https://fakestoreapi.com/products');
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        setProducts(data);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+        setError('Failed to load products. Please try again later.');
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  if (loading) {
+    return <div className="loading">Loading products...</div>;
+  }
+
+  if (error) {
+    return <div className="error">{error}</div>;
+  }
 
   return (
     <div className="product-list">
