@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import FeaturedProducts from '../components/home/FeaturedProducts';
 
 function Home() {
   return (
@@ -32,27 +33,7 @@ function Home() {
         </div>
       </section>
       
-      <section className="featured-products">
-        <h2>Featured Products</h2>
-        <p className="featured-subtitle">A taste of what we offer. No fluorescent lighting required.</p>
-        <div className="featured-products-grid">
-          <div className="featured-product">
-            <div className="product-image placeholder"></div>
-            <h3>Premium Headphones</h3>
-            <p>$129.99</p>
-          </div>
-          <div className="featured-product">
-            <div className="product-image placeholder"></div>
-            <h3>Stylish Backpack</h3>
-            <p>$59.99</p>
-          </div>
-          <div className="featured-product">
-            <div className="product-image placeholder"></div>
-            <h3>Smart Watch</h3>
-            <p>$199.99</p>
-          </div>
-        </div>
-      </section>
+      <FeaturedProducts />
       
       <section className="testimonials">
         <h2>What Our Customers Say</h2>
