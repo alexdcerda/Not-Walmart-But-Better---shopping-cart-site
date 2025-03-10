@@ -5,34 +5,78 @@ function Home() {
     <div className="home-page">
       <section className="hero">
         <div className="hero-content">
-          <h1>Buy Whatever You Want</h1>
-          <p>Your one-stop shop for all your shopping needs</p>
+          <h1>Not Walmart. <span className="highlight">Better.</span></h1>
+          <p className="tagline">Shop like nobody's watching. We're definitely not tracking your every move.</p>
+          <p className="sub-tagline">Quality products without the big-box experience.</p>
           <Link to="/shop" className="cta-button">
             Shop Now
           </Link>
         </div>
       </section>
       
+      <section className="features">
+        <div className="feature">
+          <div className="feature-icon">🛍️</div>
+          <h3>Curated Selection</h3>
+          <p>We don't sell everything. Just the good stuff.</p>
+        </div>
+        <div className="feature">
+          <div className="feature-icon">🚚</div>
+          <h3>Fast Delivery</h3>
+          <p>Get your items quickly without having to park half a mile away.</p>
+        </div>
+        <div className="feature">
+          <div className="feature-icon">💰</div>
+          <h3>Fair Prices</h3>
+          <p>No greeters, no massive stores. Just savings passed to you.</p>
+        </div>
+      </section>
+      
       <section className="featured-products">
         <h2>Featured Products</h2>
+        <p className="featured-subtitle">A taste of what we offer. No fluorescent lighting required.</p>
         <div className="featured-products-grid">
-          {/* We'll replace these with actual product components later */}
           <div className="featured-product">
             <div className="product-image placeholder"></div>
-            <h3>Product 1</h3>
-            <p>$19.99</p>
+            <h3>Premium Headphones</h3>
+            <p>$129.99</p>
           </div>
           <div className="featured-product">
             <div className="product-image placeholder"></div>
-            <h3>Product 2</h3>
-            <p>$24.99</p>
+            <h3>Stylish Backpack</h3>
+            <p>$59.99</p>
           </div>
           <div className="featured-product">
             <div className="product-image placeholder"></div>
-            <h3>Product 3</h3>
-            <p>$14.99</p>
+            <h3>Smart Watch</h3>
+            <p>$199.99</p>
           </div>
         </div>
+      </section>
+      
+      <section className="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div className="testimonial-grid">
+          <div className="testimonial">
+            <p>"I can actually find what I'm looking for without walking 5 miles."</p>
+            <p className="customer-name">— Sarah K.</p>
+          </div>
+          <div className="testimonial">
+            <p>"The checkout process doesn't make me question my life choices."</p>
+            <p className="customer-name">— Mike T.</p>
+          </div>
+          <div className="testimonial">
+            <p>"Finally, a store where I don't need to bring snacks for the journey."</p>
+            <p className="customer-name">— Alex R.</p>
+          </div>
+        </div>
+      </section>
+      
+      <section className="cta-section">
+        <h2>Ready to shop without the hassle?</h2>
+        <Link to="/shop" className="cta-button large">
+          Shop Now
+        </Link>
       </section>
     </div>
   );
