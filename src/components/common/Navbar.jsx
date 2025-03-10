@@ -1,9 +1,16 @@
 import { Link } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { CartContext } from '../../context/CartContext';
+import CartPopup from '../cart/CartPopup';
 
 function Navbar() {
   const { getTotalItems = () => 0 } = useContext(CartContext) || {};
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  
+  const toggleCart = (e) => {
+    e.preventDefault(); // Prevent navigation when clicking the cart icon
+    setIsCartOpen(!isCartOpen);
+  };
   
   return (
     <nav className="navbar">
@@ -19,10 +26,16 @@ function Navbar() {
         </li>
       </ul>
       <div className="navbar-cart">
-        <Link to="/shop" className="cart-icon">
+        <a href="#" className="cart-icon" onClick={toggleCart}>
           🛒 <span className="cart-count">{getTotalItems()}</span>
-        </Link>
+        </a>
       </div>
+      
+      {/* Cart Popup */}
+      <CartPopup 
+        isOpen={isCartOpen} 
+        onClose={() => setIsCartOpen(false)} 
+      />
     </nav>
   );
 }
