@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import Navbar from '../../src/components/common/Navbar';
 import { CartContext } from '../../src/context/CartContext';
 
@@ -34,7 +34,7 @@ describe('Navbar Component', () => {
     render(<NavbarWithContext contextValue={mockEmptyCartContext} />);
     
     // Check if the logo is rendered
-    expect(screen.getByText('ShopMock')).toBeInTheDocument();
+    expect(screen.getByText('not walmart')).toBeInTheDocument();
     
     // Check if navigation links are rendered
     expect(screen.getByText('Home')).toBeInTheDocument();
